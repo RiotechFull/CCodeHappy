@@ -41,7 +41,7 @@ Al terminar la instalación, PowerShell no encontraba el comando `claude` porque
 
 3. Cerrar y volver a abrir PowerShell para que tome el cambio.
 
-![Corrección del PATH](capturas/03-correccion-path.png)
+(No tome evidencias de este paso)
 
 ### 2.3 Verificación
 
@@ -49,7 +49,7 @@ Al terminar la instalación, PowerShell no encontraba el comando `claude` porque
 claude --version
 ```
 
-![claude --version](capturas/04-claude-version.png)
+![claude --version](capturas/claude-version.png)
 
 ## Inicio de sesión y pantalla de bienvenida
 
@@ -60,11 +60,11 @@ claude --version
 
 La sesión quedó iniciada con **Claude Code v2.1.329**, modelo **Opus 5.5**, plan **Claude Pro**, trabajando en la carpeta `D:\ccode`. Como primera prueba le pedí comenzar mi primer proyecto web.
 
-![Pantalla de bienvenida de Claude Code](capturas/05-bienvenida-claude-code.png)
+![Pantalla de bienvenida de Claude Code](capturas/claudeCodeCli.png)
 
 Además comprobé que Claude Code también queda activo desde la **consola de Claude Desktop**, trabajando en otra carpeta del disco C:.
 
-![Claude Code desde la consola de Claude Desktop](capturas/06-claude-desktop-consola.png)
+![Claude Code desde la consola de Claude Desktop](capturas/claudeDesktop.png)
 
 ---
 
