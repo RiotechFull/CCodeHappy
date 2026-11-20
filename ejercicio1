@@ -1,0 +1,100 @@
+
+# Ejercicios prácticos – Video 01
+
+## Visual Studio Code y la extensión oficial
+
+VS Code ya estaba instalado, asi que verifiqué la extensión oficial.
+
+1. Abri VS Code → panel **Extensiones** (`Ctrl+Shift+X`).
+2. Busque **Claude Code** y verificar que el publicador sea **Anthropic**.
+3. Como no está instalada, presione **Instalar**, comprobar que esté habilitada y actualizada.
+4. Abrir el panel de Claude Code desde el ícono de la barra lateral o con `Ctrl+Shift+P` → "Claude Code".
+
+![Extensión de Claude Code en VS Code](capturas/01-vscode-extension.png)
+
+## Instalación de Claude Code y verificación
+
+### Instalación desde PowerShell (instalador nativo)
+
+Seguí el quickstart oficial. Desde PowerShell (no hace falta ejecutarlo como Administrador):
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+### Problema encontrado: `claude` no se reconocía (PATH)
+
+Al terminar la instalación, PowerShell no encontraba el comando `claude` porque la carpeta del ejecutable no estaba en la variable PATH. Lo resolví con la guía oficial:
+<https://code.claude.com/docs/es/troubleshoot-install#verify-your-path>
+
+1. Ver si la carpeta está en el PATH:
+
+   ```powershell
+   $env:Path -split ';'
+   ```
+
+2. Agregar al PATH del usuario la carpeta que indica el instalador (en Windows suele ser `%USERPROFILE%\.local\bin`):
+
+   ```powershell
+   [Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";$env:USERPROFILE\.local\bin", "User")
+   ```
+
+3. Cerrar y volver a abrir PowerShell para que tome el cambio.
+
+![Corrección del PATH](capturas/03-correccion-path.png)
+
+### 2.3 Verificación
+
+```powershell
+claude --version
+```
+
+![claude --version](capturas/04-claude-version.png)
+
+## Inicio de sesión y pantalla de bienvenida
+
+1. En PowerShell, ubicarse en la carpeta de trabajo y ejecutar `claude`.
+
+2. Elegir el inicio de sesión con la cuenta de Claude (se abre el navegador para autorizar).
+3. Volver a la terminal: aparece la pantalla de bienvenida.
+
+La sesión quedó iniciada con **Claude Code v2.1.329**, modelo **Opus 5.5**, plan **Claude Pro**, trabajando en la carpeta `D:\ccode`. Como primera prueba le pedí comenzar mi primer proyecto web.
+
+![Pantalla de bienvenida de Claude Code](capturas/05-bienvenida-claude-code.png)
+
+Además comprobé que Claude Code también queda activo desde la **consola de Claude Desktop**, trabajando en otra carpeta del disco C:.
+
+![Claude Code desde la consola de Claude Desktop](capturas/06-claude-desktop-consola.png)
+
+---
+
+## Comparación de planes
+
+Precios en dólares, consultados en [claude.com/pricing](https://claude.com/pricing) el 20/11/2026. No incluyen impuestos (en Argentina se suman los impuestos a servicios digitales) y pueden cambiar.
+
+| Plan | Precio | ¿Incluye Claude Code? | ¿Para quién conviene? |
+|---|---|---|---|
+| **Free** | USD 0 | ❌ No | Para probar Claude en el chat (web, móvil, escritorio). No sirve para este curso porque no incluye Claude Code. |
+| **Pro** | USD 20/mes · USD 17/mes pagando el año (USD 200) | ✅ Sí | Estudiantes y desarrolladores individuales que usan Claude Code a diario en proyectos chicos o medianos. Punto de entrada recomendado para el curso. |
+| **Max** | Desde USD 100/mes (solo mensual) | ✅ Sí | Uso intensivo: muchas horas diarias, proyectos grandes o quien se queda corto con los límites de Pro. Varias veces más uso que Pro y acceso prioritario. |
+| **Team** | Puesto estándar USD 25/mes (USD 20 anual) · Puesto premium USD 125/mes (USD 100 anual) · 2 a 150 personas | ✅ Sí | Equipos, cátedras o empresas que necesitan facturación centralizada y administración de usuarios. Se pueden combinar puestos estándar y premium. |
+
+> Existe también un plan **Ultra** (USD 200/mes) por encima de Max, y planes Enterprise para organizaciones grandes.
+
+---
+
+## Método de instalación elegido
+
+1. Elegí el **instalador nativo** desde PowerShell (`irm https://claude.ai/install.ps1 | iex`), el método recomendado por la documentación oficial.
+2. Se **actualiza automáticamente** en segundo plano (WinGet y Homebrew no lo hacen por defecto) y en **Windows** no necesita Node.js ni permisos de administrador.
+3. Por **comodidad**: con una sola instalación lo uso desde PowerShell, desde la consola de Claude Desktop y desde VS Code; solo tuve que corregir el PATH una vez.
+
+---
+
+## Fuentes
+
+- Planes y precios: <https://claude.com/pricing>
+- Instalación de Claude Code: <https://code.claude.com/docs/en/setup>
+- Solución de problemas del PATH: <https://code.claude.com/docs/es/troubleshoot-install#verify-your-path>
+
+
