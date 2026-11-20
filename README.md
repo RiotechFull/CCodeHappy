@@ -2,7 +2,7 @@
 
 Proyecto demo con el repositorio **CCodeHappy**, desarrollado durante el curso *Happy Programmer – Programación con Claude Code*.
 
-## 🎯 Objetivo
+## Objetivo
 
 Aprender a desarrollar software con **programación agéntica** usando Claude Code como asistente: desde la instalación y configuración del entorno hasta la construcción de una aplicación web completa (frontend, conexión a API, autenticación y pruebas automatizadas). En el camino se trabaja con buenas prácticas de contexto y memoria, gestión del consumo de tokens, control de versiones con Git y GitHub, y entornos con Docker.
 
@@ -16,7 +16,7 @@ Este repositorio reúne los ejercicios prácticos y las entregas de cada video d
 | **Claude Desktop** | Aplicación de escritorio de Claude | [Centro de ayuda – Claude Desktop](https://support.claude.com/es/collections/16163169-claude-desktop) |
 | **Claude Code** | Asistente de programación agéntica en la terminal y el IDE | [Centro de ayuda – Claude Code](https://support.claude.com/es/collections/14445694-claude-code) |
 
-## 📚 Temas del curso
+##  Temas del curso
 
 ### Entorno y fundamentos
 
