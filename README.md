@@ -8,7 +8,7 @@ Aprender a desarrollar software con **programación agéntica** usando Claude Co
 
 Este repositorio reúne los ejercicios prácticos y las entregas de cada video del curso.
 
-## 🛠️ Herramientas
+## Herramientas
 
 | Herramienta | Descripción | Documentación |
 |---|---|---|
